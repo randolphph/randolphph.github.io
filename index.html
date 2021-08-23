@@ -145,6 +145,74 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/23/React-Hooks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/23/React-Hooks/" class="post-title-link" itemprop="url">React Hooks</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-08-23 09:56:04 / Modified: 10:14:06" itemprop="dateCreated datePublished" datetime="2021-08-23T09:56:04+08:00">2021-08-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="React-Hook-学习笔记"><a href="#React-Hook-学习笔记" class="headerlink" title="React Hook 学习笔记"></a>React Hook 学习笔记</h1><p>上班以来学习React进行开发有一段时间了，由于是比较新的项目，当然也用上了React Hook，本萌新刚上手时一脸懵逼，不过好在React Hook是比较好理解的，在同事的一番点拨之下很快就上手学会了。<br>一般React Hook中用的最多的就是UseState和UseEffect，多用几次以后会发现非常好用</p>
+<h2 id="useState"><a href="#useState" class="headerlink" title="useState"></a>useState</h2><p>useState用于声明一个变量和修改这个变量的方法，并给变量赋一个初值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const [a,setA] = useState(0)</span><br></pre></td></tr></table></figure>
+<p>这里我声明了一个变量a以及修改这个变量a的方法，同时给a赋初值0<br>当然现在大型的项目一般都用Ts来写了，那就给上面的变量限定一个类型吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const [a,setA] = useState&lt;number&gt;(0)</span><br></pre></td></tr></table></figure>
+<p>当我们要修改变量时，只需要用到我们声明的那个修改变量的方法就行了<br>比如现在要把变量a修改为3</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setA(3)</span><br></pre></td></tr></table></figure>
+<h2 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h2><p>useEffect是另一个常用的React Hook，用于声明一个在页面渲染时触发以及被依赖项的变化所触发的函数以及它的依赖项</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">useEffect(()=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">&#x27;我被触发啦&#x27;</span>)</span><br><span class="line">&#125;,[])</span><br></pre></td></tr></table></figure>
+<p>useEffect接收两个参数，第一个参数是被处触发的函数，第二个参数是能触发函数执行的依赖项数组，我在声明时写了一个空数组，因为当前函数不需要依赖项。因此这个函数只会在页面刚渲染是触发一次，之后不会再被触发</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/21/my-First-Blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -335,7 +403,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
