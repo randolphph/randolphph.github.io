@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="React Hook 学习笔记上班以来学习React进行开发有一段时间了，由于是比较新的项目，当然也用上了React Hook，本萌新刚上手时一脸懵逼，不过好在React Hook是比较好理解的，在同事的一番点拨之下很快就上手学会了。一般React Hook中用的最多的就是UseState和UseEffect，多用几次以后会发现非常好用 useStateuseState用于声明一个变量和修改这个变">
+  <meta name="description" content="React Hook 学习笔记上班以来学习React进行开发有一段时间了，由于是比较新的项目，当然也用上了React Hook，本萌新刚上手时一脸懵逼，不过好在React Hook是比较好理解的，在同事的一番点拨之下很快就上手学会了。一般React Hook中用的最多的就是UseState和UseEffect，多用几次以后会发现非常好用 使用Hook的原则 Hook的调用顺序不能改变，因为Reac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React Hooks">
 <meta property="og:url" content="http://example.com/2021/08/23/React-Hooks/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="React Hook 学习笔记上班以来学习React进行开发有一段时间了，由于是比较新的项目，当然也用上了React Hook，本萌新刚上手时一脸懵逼，不过好在React Hook是比较好理解的，在同事的一番点拨之下很快就上手学会了。一般React Hook中用的最多的就是UseState和UseEffect，多用几次以后会发现非常好用 useStateuseState用于声明一个变量和修改这个变">
+<meta property="og:description" content="React Hook 学习笔记上班以来学习React进行开发有一段时间了，由于是比较新的项目，当然也用上了React Hook，本萌新刚上手时一脸懵逼，不过好在React Hook是比较好理解的，在同事的一番点拨之下很快就上手学会了。一般React Hook中用的最多的就是UseState和UseEffect，多用几次以后会发现非常好用 使用Hook的原则 Hook的调用顺序不能改变，因为Reac">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-08-23T01:56:04.000Z">
-<meta property="article:modified_time" content="2021-08-23T02:14:06.213Z">
+<meta property="article:modified_time" content="2021-08-24T11:25:27.292Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
@@ -172,10 +172,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-08-23 09:56:04 / Modified: 10:14:06" itemprop="dateCreated datePublished" datetime="2021-08-23T09:56:04+08:00">2021-08-23</time>
+              <time title="Created: 2021-08-23 09:56:04" itemprop="dateCreated datePublished" datetime="2021-08-23T09:56:04+08:00">2021-08-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-24 19:25:27" itemprop="dateModified" datetime="2021-08-24T19:25:27+08:00">2021-08-24</time>
+              </span>
 
           
 
@@ -189,15 +195,15 @@
 
       
         <h1 id="React-Hook-学习笔记"><a href="#React-Hook-学习笔记" class="headerlink" title="React Hook 学习笔记"></a>React Hook 学习笔记</h1><p>上班以来学习React进行开发有一段时间了，由于是比较新的项目，当然也用上了React Hook，本萌新刚上手时一脸懵逼，不过好在React Hook是比较好理解的，在同事的一番点拨之下很快就上手学会了。<br>一般React Hook中用的最多的就是UseState和UseEffect，多用几次以后会发现非常好用</p>
-<h2 id="useState"><a href="#useState" class="headerlink" title="useState"></a>useState</h2><p>useState用于声明一个变量和修改这个变量的方法，并给变量赋一个初值</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const [a,setA] = useState(0)</span><br></pre></td></tr></table></figure>
-<p>这里我声明了一个变量a以及修改这个变量a的方法，同时给a赋初值0<br>当然现在大型的项目一般都用Ts来写了，那就给上面的变量限定一个类型吧</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const [a,setA] = useState&lt;number&gt;(0)</span><br></pre></td></tr></table></figure>
-<p>当我们要修改变量时，只需要用到我们声明的那个修改变量的方法就行了<br>比如现在要把变量a修改为3</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setA(3)</span><br></pre></td></tr></table></figure>
-<h2 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h2><p>useEffect是另一个常用的React Hook，用于声明一个在页面渲染时触发以及被依赖项的变化所触发的函数以及它的依赖项</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">useEffect(()=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">&#x27;我被触发啦&#x27;</span>)</span><br><span class="line">&#125;,[])</span><br></pre></td></tr></table></figure>
-<p>useEffect接收两个参数，第一个参数是被处触发的函数，第二个参数是能触发函数执行的依赖项数组，我在声明时写了一个空数组，因为当前函数不需要依赖项。因此这个函数只会在页面刚渲染是触发一次，之后不会再被触发</p>
+<h2 id="使用Hook的原则"><a href="#使用Hook的原则" class="headerlink" title="使用Hook的原则"></a>使用Hook的原则</h2><ol>
+<li>Hook的调用顺序不能改变，因为React依靠的是Hook的调用顺序来将state和其对应的Hook进行关联的。这意味着不能在循环、条件判断或者子函数中调用,要把Hook放在React函数最顶层以及任何的return之前，在每一次的渲染过程中，始终确保Hook的调用顺序不发生改变</li>
+<li>Hook本身是JS函数，但是Hook只能在React的函数组件中使用而不能在JS的函数中使用（当然也可以在Hook中使用Hook）<h2 id="useState"><a href="#useState" class="headerlink" title="useState"></a>useState</h2>useState用于声明一个变量和修改这个变量的方法，并给变量赋一个初值<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const [a,setA] = useState(0)</span><br></pre></td></tr></table></figure>
+这里我声明了一个变量a以及修改这个变量a的方法，同时给a赋初值0<br>当然现在大型的项目一般都用Ts来写了，那就给上面的变量限定一个类型吧<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const [a,setA] = useState&lt;number&gt;(0)</span><br></pre></td></tr></table></figure>
+当我们要修改变量时，只需要用到我们声明的那个修改变量的方法就行了<br>比如现在要把变量a修改为3<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setA(3)</span><br></pre></td></tr></table></figure>
+值得注意的是，如果新的state需要通过原来的state计算出，那么应该穿给setState一个函数，函数接受原先的state作为参数，返回一个经过原来的state计算而出的新state<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setA(preA=&gt;preA+1)</span><br></pre></td></tr></table></figure>
+<h2 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h2>useEffect是另一个常用的React Hook，用于声明一个在页面渲染时触发以及被依赖项的变化所触发的函数以及它的依赖项<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">useEffect(()=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">&#x27;我被触发啦&#x27;</span>)</span><br><span class="line">&#125;,[])</span><br></pre></td></tr></table></figure>
+useEffect接收两个参数，第一个参数是被处触发的函数，第二个参数是能触发函数执行的依赖项数组，我在声明时写了一个空数组，因为当前函数不需要依赖项。因此这个函数只会在页面刚渲染是触发一次，之后不会再被触发</li>
+</ol>
 
     </div>
 
@@ -275,7 +281,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-Hook-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">React Hook 学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#useState"><span class="nav-number">1.1.</span> <span class="nav-text">useState</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useEffect"><span class="nav-number">1.2.</span> <span class="nav-text">useEffect</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-Hook-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">React Hook 学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8Hook%E7%9A%84%E5%8E%9F%E5%88%99"><span class="nav-number">1.1.</span> <span class="nav-text">使用Hook的原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useState"><span class="nav-number">1.2.</span> <span class="nav-text">useState</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useEffect"><span class="nav-number">1.3.</span> <span class="nav-text">useEffect</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
