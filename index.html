@@ -145,6 +145,77 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/25/React%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/25/React%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">React学习笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-08-25 11:21:29" itemprop="dateCreated datePublished" datetime="2021-08-25T11:21:29+08:00">2021-08-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-11 17:21:55" itemprop="dateModified" datetime="2021-09-11T17:21:55+08:00">2021-09-11</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="React学习笔记"><a href="#React学习笔记" class="headerlink" title="React学习笔记"></a>React学习笔记</h1><h2 id="React框架特点"><a href="#React框架特点" class="headerlink" title="React框架特点"></a>React框架特点</h2><ol>
+<li>声明式<br>即存入参数，返回结果，不关心过程（例如自己写for循环是命令式，用map循环构造就是声明式）</li>
+<li>组件化<br>将多个可独立使用的UI组件以组件树的形式组合成一个复杂页面</li>
+<li>一次学习处处编写（存疑doge）<br>客户端开发（React native),服务端渲染（SSR）</li>
+</ol>
+<h2 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h2><p>用一种结构化的方式表示HTML元素，是语法糖</p>
+<p>为了保证数据流是单向可控的，React中应该多用props，少用state<br>同时React响应式体现在View=f(state)，即通过状态的改变来更新视图,context、props、state就是一个React组件的状态<br>受控组件和非受控组件区别在于，受控组件的值是通过React的state来维护的，而非受控组件类似原生组件</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/23/React-Hooks/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -176,7 +247,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-24 19:25:27" itemprop="dateModified" datetime="2021-08-24T19:25:27+08:00">2021-08-24</time>
+                <time title="Modified: 2021-09-11 17:37:31" itemprop="dateModified" datetime="2021-09-11T17:37:31+08:00">2021-09-11</time>
               </span>
 
           
@@ -198,8 +269,9 @@
 当我们要修改变量时，只需要用到我们声明的那个修改变量的方法就行了<br>比如现在要把变量a修改为3<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setA(3)</span><br></pre></td></tr></table></figure>
 值得注意的是，如果新的state需要通过原来的state计算出，那么应该穿给setState一个函数，函数接受原先的state作为参数，返回一个经过原来的state计算而出的新state<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setA(preA=&gt;preA+1)</span><br></pre></td></tr></table></figure>
 <h2 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h2>useEffect是另一个常用的React Hook，用于声明一个在页面渲染时触发以及被依赖项的变化所触发的函数以及它的依赖项<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">useEffect(()=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">&#x27;我被触发啦&#x27;</span>)</span><br><span class="line">&#125;,[])</span><br></pre></td></tr></table></figure>
-useEffect接收两个参数，第一个参数是被处触发的函数，第二个参数是能触发函数执行的依赖项数组，我在声明时写了一个空数组，因为当前函数不需要依赖项。因此这个函数只会在页面刚渲染是触发一次，之后不会再被触发</li>
+useEffect接收两个参数，第一个参数是被处触发的函数，第二个参数是能触发函数执行的依赖项数组，我在声明时写了一个空数组，因为当前函数不需要依赖项。因此这个函数只会在页面刚渲染是触发一次，之后不会再被触发  </li>
 </ol>
+<h2 id="自定义Hook"><a href="#自定义Hook" class="headerlink" title="自定义Hook"></a>自定义Hook</h2><p>自定义Hook可以理解为一个自定义的函数，将一些可复用的逻辑放在一个自定义Hook中以调用Hook的方式去调用它。<br>需要注意的是:自定义Hook必须以”use”开头，这个约定非常重要，只有这样React才会自动检查你的Hook是否违反了上文提到的Hook规则。</p>
 
       
     </div>
@@ -409,7 +481,7 @@ useEffect接收两个参数，第一个参数是被处触发的函数，第二�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
